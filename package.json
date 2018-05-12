@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mylsb/express-workshop-2#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "express-formidable": "^1.0.0"
   }
 }

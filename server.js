@@ -1,10 +1,11 @@
 var express = require('express')
+var formidable = require('express-formidable')
 var fs = require('fs')
-const path = require('path')
 
 var app = express()
 
 app.use(express.static('public'))
+app.use(formidable())
 
 app.get('/get-posts', function(request, response) {
   fs.readFile(__dirname + '/data/posts.json', function(error, data) {
@@ -16,6 +17,10 @@ app.get('/get-posts', function(request, response) {
       response.send(data.toString())
     }
   })
+})
+
+app.post('/create-post', function(request, response) {
+  console.log(request.fields)
 })
 
 app.listen(8080, function() {
