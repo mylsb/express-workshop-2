@@ -22,8 +22,9 @@ app.get('/get-posts', function(request, response) {
 app.post('/create-post', function(request, response) {
   var now = Date.now()
   var newPost = {
-    timestamp: now,
-    content: request.fields.blogpost
+    content: request.fields.blogpost,
+    mood: request.fields.mood,
+    timestamp: now
   }
 
   fs.readFile(__dirname + '/data/posts.json', function(error, data) {

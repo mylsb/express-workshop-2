@@ -1,1 +1,8 @@
-{"blogposts":[{"timestamp":1509256598568,"content":"This is my very first blog post!"},{"timestamp":1526098428663,"content":"yeewww another one"}]}
+{
+  "blogposts": [
+    {
+      "timestamp": 1509256598568,
+      "content": "This is my very first blog post!"
+    }
+  ]
+}
