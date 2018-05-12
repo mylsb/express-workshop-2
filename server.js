@@ -20,7 +20,14 @@ app.get('/get-posts', function(request, response) {
 })
 
 app.post('/create-post', function(request, response) {
-  console.log(request.fields)
+  var now = Date.now()
+
+  var newPost = {
+    timestamp: now,
+    content: request.fields.blogpost
+  }
+
+  response.send(newPost)
 })
 
 app.listen(8080, function() {
