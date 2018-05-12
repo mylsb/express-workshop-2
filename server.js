@@ -34,9 +34,19 @@ app.post('/create-post', function(request, response) {
     } else {
       var posts = JSON.parse(data)
       posts.blogposts.push(newPost)
-      console.log(posts.blogposts)
+      var updatedData = JSON.stringify(posts)
 
-      response.send(newPost)
+      fs.writeFile(__dirname + '/data/posts.json', updatedData, function(
+        error
+      ) {
+        if (error) {
+          console.log('Error writing posts.json: ' + error)
+          response.status(500)
+          response.send(error)
+        } else {
+          response.send(newPost)
+        }
+      })
     }
   })
 })
